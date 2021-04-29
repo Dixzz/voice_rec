@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".75">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:scaleType="centerCrop"
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:contentDescription="@null"
+            android:elevation="0dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/ten">
+
+            <View
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                android:onClick="finis" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/sixteen"
+                android:text="@string/app_name"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="32dp"
+            android:id="@+id/shareBtn"
+            android:layout_height="32dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/sixteen"
+            android:layout_marginEnd="20dp"
+            android:elevation="1dp"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/grey_light2"
+            app:strokeWidth="1dp">
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:background="@drawable/share" />
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@drawable/rounded_top"
+        android:orientation="vertical"
+        android:padding="@dimen/sixteen"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="3dp"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded" />
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="sans-serif"
+            android:text="Eyevy"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/item_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sixteen"
+            android:text="Some desc"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/offer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ten"
+            android:text="78% off"
+            android:textColor="@color/mat_green"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:onClick="openMap"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginTop="@dimen/ten"
+                android:text="Long address..."
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Click to view on Google Maps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/sixteen"
+            android:alpha=".1"
+            android:background="?android:attr/textColorPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sixteen"
+            android:text="Products"
+            android:textSize="18sp" />
+
+        <com.factor.bouncy.BouncyRecyclerView
+            app:recyclerview_stiffness="STIFFNESS_MEDIUM"
+            android:id="@+id/rec2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/ten"/>
+    </LinearLayout>
+</LinearLayout>
